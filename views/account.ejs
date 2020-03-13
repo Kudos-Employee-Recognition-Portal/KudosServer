@@ -4,34 +4,77 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Spartan:400,700&display=swap" rel="stylesheet"> 
-  <%- include('partials/head') %>
   <link rel="stylesheet" type="text/css" href="./assets/account.css">
-  <%- include('partials/navbar') %>
-  <script>  document.getElementById("link2").classList.add("active") 
-            document.getElementById("link1").remove()
-            document.getElementById("link3").remove()
-			document.getElementById("link8").remove()
-			
-  </script>
+  <%- include('partials/head') %>
+  <link rel="stylesheet" type="text/css" href="login.css" >
 </head>
 
 <body>
 
-  <div id='titleSpace'>
-    <div id='pageTitle'>Update Password</div>
-  </div>
-  
-  <div id='accountInfo'>
-    <form action="/accountpass" method="post">
-      <div class='container'>
-        <label for="typ"> Enter New Password: </label>
-        <input type="password" name="newpass" placeholder="New Password">
-      </div>
-  	<br>
-  	<button id='submitButton' type="Submit" value="Update Password">Update Password</button> 
-    </form>
-  </div>
+<%- include('partials/navbar') %>
+<script>  
+          var entry =   <%- type %>;
+          console.log(entry);
+          document.getElementById("link9").classList.add("active") 
+          if(entry === "manager"){
+          document.getElementById("link1").remove()
+          }
+          else{  
+          document.getElementById("link2").remove()
+          }
+          document.getElementById("link3").remove()
+          document.getElementById("link4").remove()
+          // document.getElementById("link6").remove()
+          document.getElementById("link7").remove()
+          // document.getElementById("link8").remove()
+          // document.getElementById("link9").remove()        
 
+</script>
+
+<div id='titleSpace'>
+    <div id='pageTitle'>Update Account</div>
+</div>
+
+<div class="row">
+  <div class="card col-sm-4 mx-auto">
+      <div class="card-body">
+        <h4>Current User Info</h6>
+        <ul>Firstname: <%= man.firstname %> </ul>
+        <ul>Lastname: <%= man.lastname %> </ul>
+        <ul>Email: <%= man.email %> </ul>
+
+          <h4>Update User Info</h4>
+        <form action="/accountpass" method="post" >
+          <div class="form-group row">
+
+  
+          <label class="col-sm-5 col-form-label" for="fn">Update First Name</label>
+          <input class="col-sm-7 form-control-sm" type="text" id="fn" name="newfn" placeholder="<%= man.firstname %>">
+
+          <label class="col-sm-5 col-form-label" for="ln">Update Last Name</label>
+          <input class="col-sm-7 form-control-sm" type="text" id="ln" name="newln" placeholder="<%= man.lastname %>">
+
+
+
+          <label class="col-sm-5 col-form-label" for="cpass">Current Password</label>
+          <input class="col-sm-7 form-control-sm" type="password" id="cpass" name="currentpass" placeholder="Current Password" required>
+
+          <label class="col-sm-5 col-form-label" for="pass">New Password</label>
+          <input class="col-sm-7 form-control-sm" type="password" id="pass" name="newpass" placeholder="New Password" required>
+
+          <input class="btn btn-primary mx-auto" type="submit" value="Update Account">
+        </div>
+        </form>
+        <h6 class="text-danger"><%= msg %></h6>
+      </div>
+  </div>
+</div>
+
+
+
+
+<%- include('partials/footer') %>
+<%- include('partials/footscripts') %>
 </body>
 </html>
 
