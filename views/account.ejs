@@ -5,13 +5,10 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Spartan:400,700&display=swap" rel="stylesheet"> 
   <%- include('partials/head') %>
+  <%- include('partials/navbar') %>
   <link rel="stylesheet" type="text/css" href="./assets/account.css">
-</head>
-
-<body>
-
-<%- include('partials/navbar') %>
-<script>  
+  
+  <script>  
           var entry =   <%- type %>;
           console.log(entry);
           document.getElementById("link9").classList.add("active") 
@@ -29,6 +26,9 @@
           // document.getElementById("link9").remove()        
 
 </script>
+</head>
+
+<body>
 
 <div id='titleSpace'>
     <div id='pageTitle'>Update Account</div>
