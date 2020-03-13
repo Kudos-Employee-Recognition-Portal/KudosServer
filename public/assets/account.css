@@ -11,8 +11,8 @@
 }
 
 body{
-	background-color: rgba(93,188,210);
-	background-image: none;
+	background-color: rgba(93,188,210) !important;
+	background-image: none !important;
 	background-repeat: no-repeat;
 	background-size: stretch;
 	width: 100%;
