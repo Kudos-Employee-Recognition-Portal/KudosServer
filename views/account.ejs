@@ -3,13 +3,12 @@
 <html lang="en">
 
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Spartan:400,700&display=swap" rel="stylesheet"> 
   <%- include('partials/head') %>
-  <link rel="stylesheet" type="text/css" href="login.css" >
-</head>
-
-<body>
-<%- include('partials/navbar') %>
-<script>  
+  <%- include('partials/navbar') %>
+  <link rel="stylesheet" type="text/css" href="./assets/account.css">
+  
+  <script>  
           var entry =   <%- type %>;
           console.log(entry);
           document.getElementById("link9").classList.add("active") 
@@ -25,14 +24,17 @@
           document.getElementById("link7").remove()
           // document.getElementById("link8").remove()
           // document.getElementById("link9").remove()        
-
 </script>
+</head>
 
+<body>
 
+<div id='titleSpace'>
+    <div id='pageTitle'>Update Account</div>
+</div>
 
 <div class="row">
   <div class="card col-sm-4 mx-auto">
-    <h5 class="card-header text-center">Update Account</h5>
       <div class="card-body">
         <h4>Current User Info</h6>
         <ul>Firstname: <%= man.firstname %> </ul>
@@ -58,7 +60,7 @@
           <label class="col-sm-5 col-form-label" for="pass">New Password</label>
           <input class="col-sm-7 form-control-sm" type="password" id="pass" name="newpass" placeholder="New Password" required>
 
-          <input class="btn btn-primary mx-auto" type="submit" value="Update Account">
+          <input id="submitButton" type="submit" value="Update Account">
         </div>
         </form>
         <h6 class="text-danger"><%= msg %></h6>
@@ -73,4 +75,3 @@
 <%- include('partials/footscripts') %>
 </body>
 </html>
-

@@ -4,7 +4,8 @@
 
 <head>
   <%- include('partials/head') %>
-  <link rel="stylesheet" type="text/css" href="login.css" >
+  <link href="https://fonts.googleapis.com/css?family=Spartan:400,700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="./assets/sig.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> 
   <script src="jSignature.js"></script>
   <script src="plugins/jSignature.CompressorBase30.js"></script>
@@ -20,25 +21,28 @@
           document.getElementById("link4").remove()
           document.getElementById("link3").remove()
           document.getElementById("link7").remove()
-
 </script>
-
-<h5 class="bg-info text-center">Draw your signature below to use on your Award PDFs</h5>
-
-<div class="bg-dark " id="signatureparent">
-  <div>
-  <div class=" bg-light d-flex justify-column-center" id="signature"></div>
-</div>
-</div>
-<button class="btn btn-primary" id="acceptSig">Save</button>
-<a href="/sig"><button class="btn btn-primary" id="clearSig">Clear</button></a>
-<img src="" alt="" id=acceptedSig>
-
-<form name="svgform" method="post" action="/sig">
-  <input type="hidden" name="svgEncode" id=svgIn>
-</form>
-
-
+  
+    <div id='titleSpace'>
+      <div id='pageTitle'>Draw your signature below to use on your Award PDFs</div>
+	</div>
+    
+    <div id="signatureparent">
+      <div>
+        <div class=" bg-light d-flex justify-column-center" id="signature"></div>
+      </div>
+    </div>
+	<div id="buttonSpace">
+	    <button class="btn btn-primary" id="acceptSig">Save</button>
+		<a href="/sig"><button class="btn btn-primary" id="clearSig">Clear</button></a>
+		<img src="" alt="" id=acceptedSig>
+	</div>
+    
+    <form name="svgform" method="post" action="/sig">
+		<input type="hidden" name="svgEncode" id=svgIn>
+	</form>
+    
+    
 <script type="text/javascript">
 $("#signature").jSignature({
   resetButton: $("#clearsig"),
@@ -64,6 +68,6 @@ acceptbtn.addEventListener("click", function(){
 
 <%- include('partials/footer') %>
 <%- include('partials/footscripts') %>
+
 </body>
 </html>
-
