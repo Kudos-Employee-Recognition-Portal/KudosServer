@@ -2,29 +2,31 @@
 <html lang="en">
 
 <head>
-  <%- include('partials/head') %>
   <link href="https://fonts.googleapis.com/css?family=Spartan:400,700&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" type="text/css" href="./assets/manager.css">
-  <%- include('partials/navbar') %>
-
-  <script>   
-            document.getElementById("link1").remove()
-            document.getElementById("link4").remove()
-            // document.getElementById("link7").remove()
-            document.getElementById("link3").remove()
+  <%- include('partials/head') %>
+  <link rel="stylesheet" type="text/css" href="../../assets/deleteAward.css">
   
+  <%- include('partials/navbar') %>
+  <script>  document.getElementById("link6").classList.add("active") 
+          document.getElementById("link1").remove()  
+          document.getElementById("link3").remove() 
+          document.getElementById("link4").remove()
+          document.getElementById("link7").remove()
   </script>
+  
 </head>
 
 <body>
 
-<div class="row">
-      <div class="card col-md-4 mx-auto text-center bg-warning">
-                <h4 class="card-header text-center bg-dark text-light">Are you sure you want to delete Award <%=AwardNum %>?</h4>
-      <a href="/manager/deleteaward/bye/<%=AwardNum%>"><button type="button" class="btn btn-danger text-center">Delete Award</button></a>
-      <a href="/manager"><button type="button" class="btn btn-secondary">Cancel</button></a>
-      </div>
-</div>
+  <div id='titleSpace'>
+      <div id='pageTitle'>Delete Award</div>
+  </div>
+  
+  <div id='deleteInfo'>
+      <div id="confirmation">Are you sure you want to delete Award <%=AwardNum %>?</div>
+      <a href="/manager/deleteaward/bye/<%=AwardNum%>"><button id="deleteButton" type="button">Delete Award</button></a>
+      <a href="/manager"><button id="cancelButton" type="button">Cancel</button></a>
+  </div>
 
   <%- include('partials/footer') %>
   <%- include('partials/footscripts') %>
