@@ -32,6 +32,9 @@
 
   <div id="UserInfo">
       <div id="enterYourInfo">Please Enter Your Info Below</div>
+            <% if (messages.error) { %>
+        <%= messages.error %>
+        <% } %>
       <form action="/login" method="post" >
         <div class='container'>
           <label for="authEmail" id='authText'>Email:</label>
